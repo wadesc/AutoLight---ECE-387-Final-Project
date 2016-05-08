@@ -164,13 +164,9 @@ void action()
       {
       case G1_LIGHTS_ON:
         digitalWrite(8, HIGH);
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
         break;
       case G1_LIGHTS_OFF:
         digitalWrite(8, LOW);
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
         break;
       }
       break;
