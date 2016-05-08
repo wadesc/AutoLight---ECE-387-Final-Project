@@ -1,21 +1,21 @@
 # AutoLight - ECE 387 Final Project Code
-#include "Arduino.h"
-#if !defined(SERIAL_PORT_MONITOR)
+  #include "Arduino.h"
+  #if !defined(SERIAL_PORT_MONITOR)
   #error "Arduino version not supported. Please update your IDE to the latest version."
-#endif
+  #endif
 
-#if defined(SERIAL_PORT_USBVIRTUAL)
+  #if defined(SERIAL_PORT_USBVIRTUAL)
   // Shield Jumper on HW (for Leonardo and Due)
-  #define port SERIAL_PORT_HARDWARE
-  #define pcSerial SERIAL_PORT_USBVIRTUAL
-#else
+    #define port SERIAL_PORT_HARDWARE
+    #define pcSerial SERIAL_PORT_USBVIRTUAL
+  #else
   // Shield Jumper on SW (using pins 12/13 or 8/9 as RX/TX)
   #include "SoftwareSerial.h"
   SoftwareSerial port(12, 13);
   #define pcSerial SERIAL_PORT_MONITOR
-#endif
+  #endif
 
-#include "EasyVR.h"
+  #include "EasyVR.h"
 
 EasyVR easyvr(port);
 
