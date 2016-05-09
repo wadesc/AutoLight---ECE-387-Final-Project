@@ -1,0 +1,21 @@
+#include "pitches.h"
+
+int melody[] = {
+  NOTE_AS3, NOTE_C4, NOTE_DS4, NOTE_G4, NOTE_G4, NOTE_GS4, NOTE_AS4, NOTE_GS4, NOTE_G4, NOTE_G4, NOTE_F4, NOTE_DS4, NOTE_DS4, NOTE_C4
+};
+int noteDurations[] = {
+  2, 2, 2, 1, 4, 4, 4, 4, 3, 3, 4, 4, 2, 2
+};
+
+case G1_SET_MOOD:
+  analogWrite(REDPIN,0);
+  for (int thisNote = 0; thisNote < 15; thisNote++) {
+    int noteDuration = 1000 / noteDurations[thisNote];
+    tone(7, melody[thisNote], noteDuration);
+    int pauseBetweenNotes = noteDuration * 1.30;
+    delay(pauseBetweenNotes);
+     noTone(7);
+  }
+  
+  
+  
